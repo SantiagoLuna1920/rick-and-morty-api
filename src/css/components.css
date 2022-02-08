@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(235, 229, 229);
+}
+
+header {
+    position: sticky;
+    top: -.75rem;
+}
+
+header >  .divHeader {
+    background-color: rgb(26, 24, 22);
+    padding: 1.5rem;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+header >  .divHeader > .headerContainer> div {
+    display: inline-block;
+    height: auto;
+    margin-left: 4vw;
+    margin-top: 2vh;
+}
+
+header >  .divHeader > .headerContainer > div > span {
+    cursor: pointer;
+    display: inline-block;
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.headerContainer {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Creacion del hover para cada uno de los spans */
+
+header > .divHeader > .headerContainer > div > .characters:hover, .locations:hover, .episodes:hover {
+    opacity: .6;
+}
+
+/* //clases para elementos creados por js */
+
+.divDOM {
+    color: rgb(83, 81, 81);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container-cards {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (min-width: 240px) {
+    .container-cards .cards {
+        width: 100%;
+        height: auto;
+        border: 3px solid red;
+    }
+    .container-cards .cards > img {
+        display: inline-block;
+        width: 100%;
+    }
+  }
+
+
+@media (min-width: 320px) {
+    .container-cards .cards {
+        width: 100%;
+    }
+    .container-cards .cards > img {
+        display: inline-block;
+        width: 100%;
+    }
+  }
+
+  @media (min-width: 490px) {
+    .container-cards .cards {
+        display: inline-block;
+        width: 50%;
+    }
+    .container-cards .cards > img {
+        display: inline-block;
+        width: 100%;
+    }
+  }
+  
+@media ( min-width: 768px ) {
+    .container-cards .cards {
+        display: inline-block;
+        width: 33%;
+    }
+    .container-cards .cards > img {
+        width: 100%;
+    }
+}
+
+@media ( min-width: 992px ) {
+    .container-cards .cards {
+        display: inline-block;
+        width: 25%;
+    }
+    .container-cards .cards > img {
+        width: 100%;
+    }
+}
