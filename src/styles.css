@@ -519,7 +519,6 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
         width: 100%;
     }
   }
-
   @media (min-width: 490px) {
     .container-cards .cards {
         display: inline-block;
