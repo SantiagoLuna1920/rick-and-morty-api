@@ -1,3 +1,3 @@
-# Configuracion webpack para proyectos personales
+# Proyecto personal API Rick and Morty
 
-Esta es una configuracion para poder instalar webpack para futuros proyectos en html, css y javascript, para poder usar las configuraciones del webpack se deberan ejecutar los siguientes comandos en el orden establecido, para esto deberemos primero ejecutar ```npm install``` luego de esto, se debera ejecutar ```npm run build```
+Este proyecto es creado con el proposito de mostrar mis conocimientos en ```HTML, CSS Y JAVASCRIPT```, no se olviden que si desean descargar el proyecto deberan agregar el comando ```npm install``` en la terminal, esto con el fin de que se descarguen las dependencias de desarrollador que he usado por defecto en el proyecto y que asi lo puedan correr en su localhost, por ultimo, no se olviden de usar el ```npm start``` esto abre el proyecto con webpack dev server, sin mas que agregar, espero les guste.
