@@ -7,3 +7,5 @@ import "/src/css/components.css";
 
 
 init();
+
+console.log("Hola");
