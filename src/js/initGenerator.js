@@ -1,5 +1,6 @@
-import { petitionCharacters } from "./api/petitions.api";
-import { generatorApiCharacterHTML } from "./html-api.generator";
+import { petitionCharacters, petitionLocations, petitionLocationsCharacter } from "./api/petitions.api";
+import { generatorApiCharacterHTML, resetCont } from "./html-api.generator";
+import { generatorApiCharacterHTMLLocations, generatorHtmlLocations, resetContLocation } from "./html-form.generator";
 
 const htmlCreate = () => {
     const body = document.querySelector('body');
@@ -22,18 +23,29 @@ const eventos = () => {
     const characters = document.querySelector(".characters");
 
     characters.addEventListener( "click", () => {
+        resetCont();
         petitionCharacters()
-            .then( ({ results }) => generatorApiCharacterHTML( results ) );
+            .then( ( data ) => {
+                generatorApiCharacterHTML(data );
+            } );
     });
 
     const locations = document.querySelector(".locations");
 
     locations.addEventListener( "click", () => {
-        console.log("Click locations");
+        petitionLocations( resetContLocation() )
+            .then( ( data ) => {
+                generatorHtmlLocations( data );
+                for (const value of data.residents) {
+                    petitionLocationsCharacter(value)
+                        .then( ( data ) => {
+                            generatorApiCharacterHTMLLocations( data );
+                        })
+                }
+            } ) 
     });
 
     const episodes = document.querySelector(".episodes");
-
     episodes.addEventListener( "click", () => {
         console.log("Click episodes");
     });
@@ -43,8 +55,6 @@ const eventos = () => {
 const init = () => {
     htmlCreate();
     eventos();
-
-
 }
 
 

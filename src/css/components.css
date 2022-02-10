@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(235, 229, 229);
+    background-color: #202329;
 }
 
 header {
@@ -8,7 +8,8 @@ header {
 }
 
 header >  .divHeader {
-    background-color: rgb(26, 24, 22);
+    --bg-color: rgb(26, 24, 22);
+    background-color: var(--bg-color);
     padding: 1.5rem;
     width: 100%;
     padding-bottom: 2rem;
@@ -22,9 +23,10 @@ header >  .divHeader > .headerContainer> div {
 }
 
 header >  .divHeader > .headerContainer > div > span {
+    --color-text: aliceblue;
+    color: var(--color-text);
     cursor: pointer;
     display: inline-block;
-    color: aliceblue;
     font-size: 2rem;
 }
 
@@ -38,6 +40,7 @@ header >  .divHeader > .headerContainer > div > span {
 
 header > .divHeader > .headerContainer > div > .characters:hover, .locations:hover, .episodes:hover {
     opacity: .6;
+    text-decoration: underline;
 }
 
 /* //clases para elementos creados por js */
@@ -49,15 +52,21 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
     font-family: 'Courier New', Courier, monospace;
 }
 .container-cards {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
 @media (min-width: 240px) {
     .container-cards .cards {
+        background-color: #3c4046;
+        border-radius: 1rem;
         width: 100%;
         height: auto;
-        border: 3px solid red;
+        margin: 1rem 1%;
+        border: solid 5px #3c4046;
+        overflow: hidden;
+        color: aliceblue;
+        padding-bottom: 1.5rem;
     }
     .container-cards .cards > img {
         display: inline-block;
@@ -68,18 +77,20 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
 
 @media (min-width: 320px) {
     .container-cards .cards {
-        width: 100%;
+        width: 98%;
     }
     .container-cards .cards > img {
         display: inline-block;
         width: 100%;
     }
+
   }
 
   @media (min-width: 490px) {
     .container-cards .cards {
         display: inline-block;
-        width: 50%;
+        width: 48%;
+        height: clamp( 80vh, 80vh+2vh, 87vh );
     }
     .container-cards .cards > img {
         display: inline-block;
@@ -90,19 +101,80 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
 @media ( min-width: 768px ) {
     .container-cards .cards {
         display: inline-block;
-        width: 33%;
+        width: 31%;
     }
     .container-cards .cards > img {
         width: 100%;
+    }
+    .containerB {
+        position: sticky;
+        top: 4.5rem;
     }
 }
 
 @media ( min-width: 992px ) {
     .container-cards .cards {
         display: inline-block;
-        width: 25%;
+        width: 23%;
     }
     .container-cards .cards > img {
         width: 100%;
     }
+    .containerB {
+        position: sticky;
+        top: 4.5rem;
+    }
+}
+
+.containerB {
+    --bg-color: rgb(26, 24, 22);
+    
+    --color-text: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    top: 4.5rem;
+}
+
+.prevB, .nextB, .prevBL, .nextBL {
+    cursor: pointer;
+    font-size: 1.5rem;
+ padding: .5rem 1.5rem;
+ margin: .8rem;
+ border-radius: .3rem;
+ border-style: none;
+ background-color: var(--bg-color);
+ color: var(--color-text);
+}
+
+/* .prevB:hover, .nextB:hover {
+    opacity: .9;
+} */
+
+.prevB:hover > span, .nextB:hover span {
+    text-decoration: underline;
+}
+
+.prevBL:hover > span, .nextBL:hover span {
+    text-decoration: underline;
+}
+
+.divSummary {
+    border: 2px solid #3c4046;
+    color: aliceblue;
+    height: auto;
+    padding: 1rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
+.divSummary:hover {
+    background-color: #3c4046;
 }
