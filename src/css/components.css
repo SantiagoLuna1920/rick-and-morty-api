@@ -72,6 +72,10 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
         display: inline-block;
         width: 100%;
     }
+    .containerB {
+        position: sticky;
+        top: 10rem !important;
+    }
   }
 
 
@@ -108,7 +112,7 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
     }
     .containerB {
         position: sticky;
-        top: 4.5rem;
+        top: 4.5rem !important;
     }
 }
 
@@ -122,22 +126,19 @@ header > .divHeader > .headerContainer > div > .characters:hover, .locations:hov
     }
     .containerB {
         position: sticky;
-        top: 4.5rem;
+        top: 4.5rem !important;
     }
 }
 
 .containerB {
     --bg-color: rgb(26, 24, 22);
-    
     --color-text: aliceblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     padding: 2rem;
     top: 4.5rem;
 }
 
-.prevB, .nextB, .prevBL, .nextBL {
+.prevB, .nextB, .prevBL, .nextBL, .prevBE, .nextBE {
     cursor: pointer;
     font-size: 1.5rem;
  padding: .5rem 1.5rem;

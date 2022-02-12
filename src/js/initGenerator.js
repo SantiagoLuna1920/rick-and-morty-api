@@ -1,6 +1,6 @@
-import { petitionCharacters, petitionLocations, petitionLocationsCharacter } from "./api/petitions.api";
+import { petitionCharacters, petitionEpisodes, petitionEpisodesCharacter, petitionLocations, petitionLocationsCharacter } from "./api/petitions.api";
 import { generatorApiCharacterHTML, resetCont } from "./html-api.generator";
-import { generatorApiCharacterHTMLLocations, generatorHtmlLocations, resetContLocation } from "./html-form.generator";
+import { generatorApiCharacterHTMLLocations, generatorEpisodesHtml, generatorEpisodesForm, generatorHtmlLocations, resetContLocation } from "./html-form.generator";
 
 const htmlCreate = () => {
     const body = document.querySelector('body');
@@ -47,7 +47,16 @@ const eventos = () => {
 
     const episodes = document.querySelector(".episodes");
     episodes.addEventListener( "click", () => {
-        console.log("Click episodes");
+        petitionEpisodes( resetContLocation() )
+            .then( ( data ) => {
+                generatorEpisodesForm( data );
+                for ( const value of data.characters ) {
+                    petitionEpisodesCharacter( value )
+                        .then( ( data ) => {
+                            generatorEpisodesHtml( data );
+                        } )
+                }
+            } )
     });
 
 }
@@ -56,7 +65,6 @@ const init = () => {
     htmlCreate();
     eventos();
 }
-
 
 export {
     init
